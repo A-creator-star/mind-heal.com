@@ -1,0 +1,91 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase - Mental Health Support</title>
+  <link rel="stylesheet" href="style7.css">
+  
+</head>
+<body>
+	
+<header>
+  <h1>HealSphere - Your Private Mental Health Companion</h1>
+</header>
+    
+<nav>
+  <a href="index.html" target="blank">Home</a>
+  <a href="index0.html" onclick="showPage('mood')">Mood Check-In</a>
+  <a href="stories.html" onclick="showPage('story')">Success Stories</a>
+  <a href="#contact" onclick="showPage('counseling')">Contact Us</a>
+</nav>
+
+<main>
+
+  <!-- stressed -->
+  <section id="stressed" class="active">
+    <h2>Check for stressed 😰</h2>
+    <p>Select why you're feeling stressed:</p>
+    <select id="stressedSelect" onchange="showMoodResponse()">
+      <option value="">-- Select Your Reason of stress --</option>
+      <option value="point1">😊 Disrespect or insult in class</option>
+      <option value="point2">😐 Due to broken trust by partner</option>
+      <option value="point3">😞 Due to not being able to achieve goals</option>
+      <option value="point4">😡 Due to always cheated by classmate/partner</option>
+      <option value="point5">😰 Due to not being able to create/join a group of friends</option>
+      
+    </select>
+    <div id="stressedOutput" class="stressed-result"></div>
+    <div id="stressedOptions" class="stressed-options"></div>
+  </section>
+
+ 
+
+</main>
+    <script> 
+    function showPage(pageId) {
+  document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+
+function showMoodResponse() {
+  const mood = document.getElementById('stressedSelect').value.trim();
+  const output = document.getElementById('stressedOutput');
+  const options = document.getElementById('stressedOptions');
+  let message = '', extra = '';
+
+  switch (mood) {
+    case 'point1':
+      message = "Take deep breaths, you're in control.";
+      extra = "<ul><li>Stay calm, don't react immediately.</li><li> Speak to the person calmly after class.</li><li> Tell a teacher or authority if it crosses the line.</li></ul>";
+      break;
+    case 'point2':
+      message = "Don't feel disheartened, there are many who are waiting for you.";
+      extra = "<ul><li>Cool down before making decisions.</li><li> Express your hurt calmly.</li><li> Ask for honesty calmly.</li></ul>";
+      break;
+    case 'point3':
+      message = "Sending you comfort. Don't lose hope.";
+      extra = "<ul><li>Identify your weaknesses and strengths.</li><li> Break big goals into smaller steps.</li><li> Goals may need time or a new path.</li><li> Celebrate small wins to stay motivated.</li><li> Consistency beats frustration.</li></ul>";
+      break;
+    case 'point4':
+      message = "Forget about those who don't really care about your feelings.";
+      extra = "<ul><li>Don't allow repeated chances without change.</li><li> Express how their actions hurt you.</li><li> Limit trust with those who misuse it.</li><li> Walk away from toxic people.</li></ul>";
+      break;
+    case 'point5':
+      message = "You're not alone in this.";
+      extra = "<ul><li>Build friendships one-by-one first.</li><li> Friendships grow with trust and patience, so be open and kind.</li><li> Don't force it; let connections develop naturally.</li><li> Listening and showing interest helps.</li></ul>";
+      break;
+    default:
+      message = "Please select a valid reason.";
+      extra = "";
+  }
+
+  output.innerHTML = `<strong>${message}</strong>`;
+  options.innerHTML = extra;
+}
+
+  </script>
+
+<footer>
+  <p>© 2025 HealSphere. Your life matters. 💙</p>
+</footer>
+</body>
+</html>

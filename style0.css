@@ -1,0 +1,70 @@
+
+    body { font-family: Arial, sans-serif;
+         background: #d1d0ec;
+          margin: 0;
+           padding: 0; 
+        }
+    header { background-color: #a142f9; 
+        color: rgb(57, 255, 26); 
+        padding: 1.5rem;
+         text-align: center;
+        }
+    main {
+         max-width: 900px;
+          margin: 2rem auto;
+           padding: 1rem;
+            background: rgb(192, 255, 223);
+            border-radius: 8px;
+             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+             }
+    section {
+         display: none;
+         }
+    section.active {
+         display: block;
+         }
+    textarea { 
+        width: 100%;
+         height: 200px; 
+         margin-top: 10px;
+          font-size: 1rem;
+           padding: 10px;
+         }
+          button, select {
+                padding: 10px 20px; 
+                background: #c0ff05;
+                 color: rgb(255, 28, 81); 
+                 border: none; 
+                 cursor: pointer;
+                  margin-top: 10px;
+                   border-radius: 5px; 
+                   font-size: 1rem; 
+               }
+    button:hover {
+      background: #ff871f;
+      }
+    select {
+         background: #ffffff; 
+         color: #333;
+          border: 1px solid #ccc;
+           width: 100%;
+            margin-top: 10px;
+        }
+    
+    .mood-options ul {
+         padding-left: 20px;
+         }
+    footer {
+         text-align: center;
+          padding: 1rem;
+           background-color: #e0e7ff; 
+        }
+    ul {
+         list-style: disc;
+         padding-left: 20px;
+         }
+    a { 
+        color: #ee921a; 
+    }
+    
+  

@@ -1,0 +1,89 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase - Mental Health Support</title>
+  <link rel="stylesheet" href="style1.css">
+  
+</head>
+<body>
+	
+<header>
+  <h1>HealSphere - Your Private Mental Health Companion</h1>
+</header>
+    
+<nav>
+  <a href="index.html" target="blank">Home</a>
+  <a href="index0.html" onclick="showPage('mood')">Mood Check-In</a>
+  <a href="stories.html" onclick="showPage('story')">Success Stories</a>
+  <a href="#contact" onclick="showPage('counseling')">Contact Us</a>
+</nav>
+
+<main>
+
+  <!-- Angry -->
+  <section id="angry" class="active">
+    <h2>Check for Angry 😡</h2>
+    <p>Select why you're feeling angry:</p>
+    <select id="angrySelect" onchange="showMoodResponse()">
+      <option value="">-- Select Your Reason of anger --</option>
+      <option value="point1"> Disrespect or insult in class</option>
+      <option value="point2"> Due to broken trust by partner</option>
+      <option value="point3"> Due to not being able to achieve goals</option>
+      <option value="point4"> Due to always cheated by classmate/partner</option>
+      <option value="point5"> Due to not being able to create/join a group of friends</option>
+      
+    </select>
+    <div id="angerOutput" class="anger-result"></div>
+    <div id="angerOptions" class="anger-options"></div>
+  </section>
+
+</main>
+    <script> 
+       
+  function showMoodResponse() {
+  const angry = document.getElementById('angrySelect').value;
+  const output = document.getElementById('angerOutput');
+  const options = document.getElementById('angerOptions');
+  let message = '', extra = '';
+
+  switch (angry) {
+    case 'point1':
+      message = "It's understandable to feel upset when disrespected. Your feelings are valid.";
+      extra = "<ul><li>Try expressing your feelings through journaling.</li><li>Practice deep breathing exercises.</li></ul>";
+      break;
+    case 'point2':
+      message = "Broken trust hurts. Take time to heal.";
+      extra = "<ul><li>Consider speaking with a counselor.</li><li>Write down your thoughts to gain clarity.</li></ul>";
+      break;
+    case 'point3':
+      message = "Setbacks are part of growth. Don't give up.";
+      extra = "<ul><li>Break goals into smaller steps.</li><li>Celebrate small wins.</li></ul>";
+      break;
+    case 'point4':
+      message = "Being cheated repeatedly is painful. You deserve better.";
+      extra = "<ul><li>Establish boundaries and seek support.</li><li>Connect with trustworthy people.</li></ul>";
+      break;
+    case 'point5':
+      message = "Feeling left out is tough. You're not alone.";
+      extra = "<ul><li>Join clubs or activities that interest you.</li><li>Talk to someone you trust.</li></ul>";
+      break;
+    default:
+      message = "";
+      extra = "";
+  }
+
+  output.innerHTML = `<strong>${message}</strong>`;
+  options.innerHTML = extra;
+}
+
+
+
+
+  
+    </script>
+
+<footer>
+  <p>© 2025 HealSphere. Your life matters. 💙</p>
+</footer>
+</body>
+</html>

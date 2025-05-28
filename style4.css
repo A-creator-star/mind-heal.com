@@ -1,0 +1,94 @@
+body {
+         font-family: Arial, sans-serif;
+          background: #cfdbe3;
+           margin: 0;
+            padding: 0;
+         }
+    header {
+         background-color: #ff8c8c;
+          color: rgb(149, 11, 255);
+           padding: 1.5rem;
+            text-align: center; 
+        }
+    nav {
+         text-align: center; 
+         background: #88f9ff;
+          padding: 1rem; 
+        }
+    nav a {
+         margin: 0 1rem;
+          color: #064cef;
+           text-decoration: none;
+            font-weight: bold;
+         }
+    nav a:hover {
+         text-decoration: underline;
+         }
+    main {
+         max-width: 900px;
+          margin: 2rem auto;
+           padding: 1rem; 
+           background: rgb(144, 249, 255);
+            border-radius: 8px;
+             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+             }
+    section {
+         display: none;
+         }
+    section.active {
+         display: block;
+         }
+    textarea {
+         width: 100%;
+          height: 200px;
+           margin-top: 10px; 
+           font-size: 1rem;
+            padding: 10px;
+         }
+    button, select {
+         padding: 10px 20px;
+          background: #4b7bec;
+           color: white;
+            border: none;
+             cursor: pointer;
+              margin-top: 10px;
+               border-radius: 5px;
+                font-size: 1rem;
+             }
+    button:hover {
+         background: #3a63c2;
+         }
+    select {
+         background: #ffffff;
+          color: #333;
+           border: 1px solid #ccc;
+            width: 100%;
+             margin-top: 10px;
+             }
+    .anger-result, .anger-options, .journal-tabs {
+         margin-top: 15px;
+         }
+    .anger-options ul {
+         padding-left: 20px;
+         }
+    .journal-tabs button {
+         margin-right: 10px;
+          background-color: #e0e7ff;
+           color: #333;
+         }
+    .journal-tabs button.active {
+         background-color: #4b7bec;
+          color: white;
+         }
+    footer { 
+        text-align: center;
+         padding: 1rem;
+          background-color: #e0e7ff;
+         }
+    ul {
+         list-style: disc;
+          padding-left: 20px;
+         }
+    a {
+         color: #4b7bec;
+         }

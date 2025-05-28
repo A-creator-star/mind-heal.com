@@ -1,0 +1,91 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase - Mental Health Support</title>
+  <link rel="stylesheet" href="style4.css">
+  
+</head>
+<body>
+	
+<header>
+  <h1>HealSphere - Your Private Mental Health Companion</h1>
+</header>
+    
+<nav>
+  <a href="index.html" target="blank">Home</a>
+  <a href="index0.html" onclick="showPage('mood')">Mood Check-In</a>
+  <a href="stories.html" onclick="showPage('story')">Success Stories</a>
+  <a href="#contact" onclick="showPage('counseling')">Contact Us</a>
+</nav>
+
+<main>
+
+  <!-- Relaxed -->
+  <section id="relaxed" class="active">
+    <h2>Check for Relaxed 💆</h2>
+    <p>Select why you're feeling relaxed:</p>
+    <select id="relaxedSelect" onchange="showMoodResponse()">
+      <option value="">-- Select Your Reason of feeling relaxed --</option>
+      <option value="point1">Due to safe and comfortable environment</option>
+      <option value="point2">Due to emotional stability</option>
+      <option value="point3">Due to mental clarity</option>
+      <option value="point4">By doing positive activities</option>
+      
+      
+    </select>
+    <div id="relaxedOutput" class="relaxed-result"></div>
+    <div id="relaxedOptions" class="relaxed-options"></div>
+  </section>
+
+ 
+
+</main>
+    <script> 
+       function showPage(pageId) {
+  document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+
+function showMoodResponse() {
+  const mood = document.getElementById('relaxedSelect').value;
+  const output = document.getElementById('relaxedOutput');
+  const options = document.getElementById('relaxedOptions');
+  let message = '', extra = '';
+
+  switch (mood) {
+    case 'point1':
+      message = "Enjoy the peace—this safe and calm space is where you recharge, reflect, and grow stronger.";
+      extra = "<ul><li>Maintain this environment by setting boundaries and taking breaks when needed.</li></ul>";
+      break;
+
+    case 'point2':
+      message = "Appreciate this balance—emotional stability is a strength that helps you face life with clarity and resilience.";
+      extra = "<ul><li>Continue emotional check-ins and surround yourself with positivity to sustain it.</li></ul>";
+      break;
+
+    case 'point3':
+      message = "Use this clarity to focus on what truly matters—it's the perfect time to make thoughtful decisions and nurture your growth.";
+      extra = "<ul><li>Practice mindfulness or journaling to keep your mind clear and focused.</li></ul>";
+      break;
+
+    case 'point4':
+      message = "Keep embracing these positive activities—they nourish your mind, lift your spirit, and build lasting well-being.";
+      extra = "<ul><li>Make time regularly for hobbies or routines that bring you joy and peace.</li></ul>";
+      break;
+
+    default:
+      message = "";
+      extra = "";
+  }
+
+  output.innerHTML = `<strong>${message}</strong>`;
+  options.innerHTML = extra;
+}
+
+    </script>
+
+<footer>
+  <p>© 2025 HealSphere. Your life matters. 💙</p>
+</footer>
+</body>
+</html>

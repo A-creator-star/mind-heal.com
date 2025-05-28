@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mind Check-In</title>
+  <link rel="stylesheet" href="style0.css" />
+</head>
+<body>
+  <header>
+    <h1>MindCheck - Your private Mental Health Companion</h1>
+  </header>
+
+  <main>
+    <!-- Mood Check-In -->
+    <section id="mood" class="active">
+      <h2>Mood Check-In 😊</h2>
+      <p>Select how you're feeling and explore personal support:</p>
+      <select id="moodselect" onchange="showMoodResponse()">
+        <option value="">-- Select Your Mood --</option>
+        <option value="sad">😞 Sad</option>
+        <option value="angry">😡 Angry</option>
+        <option value="anxious">😰 Anxious</option>
+        <option value="relaxed">😊 Relaxed</option>
+        <option value="lonely">😐 Lonely</option>
+        <option value="stressed">🥱 Stressed</option>
+      </select>
+    </section>
+  </main>
+
+  <script>
+    function showMoodResponse() {
+      const mood = document.getElementById("moodselect").value;
+
+      if (mood === "sad") {
+        window.location.href = "index2.html";
+        return;
+      }
+      if (mood === "angry") {
+        window.location.href = "index1.html";
+        return;
+      }
+      if (mood === "anxious") {
+        window.location.href = "index3.html";
+        return;
+      }
+      if (mood === "relaxed") {
+        window.location.href = "index4.html";
+        return;
+      }
+      if (mood === "lonely") {
+        window.location.href = "index5.html";
+        return;
+      }
+      if (mood === "stressed") {
+        window.location.href = "index7.html";
+        return;
+      }
+      // Optional: Handle other moods
+      alert("You selected mood: " + mood);
+    }
+  </script>
+
+  <footer>
+    <p>© 2025 HealSphere. Your life matters. 💙</p>
+  </footer>
+</body>
+</html>

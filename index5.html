@@ -1,0 +1,96 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase - Mental Health Support</title>
+  <link rel="stylesheet" href="style5.css">
+  
+</head>
+<body>
+	
+<header>
+  <h1>HealSphere - Your Private Mental Health Companion</h1>
+</header>
+    
+<nav>
+  <a href="index.html" target="blank">Home</a>
+  <a href="index0.html" onclick="showPage('mood')">Mood Check-In</a>
+  <a href="stories.html" onclick="showPage('story')">Success Stories</a>
+  <a href="#contact" onclick="showPage('counseling')">Contact Us</a>
+</nav>
+
+<main>
+
+  <!-- Lonely -->
+  <section id="lonely" class="active">
+    <h2>Check for Lonely 😐</h2>
+    <p>Select why you're feeling lonely:</p>
+    <select id="lonelySelect" onchange="showMoodResponse()">
+      <option value="">-- Select Your Reason of lonely --</option>
+      <option value="point1">Due to lack of social connections</option>
+      <option value="point2">Due to emotional disconnection</option>
+      <option value="point3">Due to social rejection or bullying</option>
+      <option value="point4">Stuck in virtual world / spending too much time on screen</option>
+      <option value="point5">Lack of self confidence to make friends</option>
+      <option value="point5">Life transition (regularly moving to a new place)</option>
+      
+    </select>
+    <div id="lonelyOutput" class="lonely-result"></div>
+    <div id="lonelyOptions" class="lonely-options"></div>
+  </section>
+
+ 
+
+</main>
+    <script> 
+      function showPage(pageId) {
+  document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+
+function showMoodResponse() {
+  const mood = document.getElementById('lonelySelect').value;
+  const output = document.getElementById('lonelyOutput');
+  const options = document.getElementById('lonelyOptions');
+  let message = '', extra = '';
+
+  switch (mood) {
+    case 'point1':
+      message = "Reach out, even in small ways—genuine connections take time, and you’re never truly alone in how you feel.";
+      extra = "<ul><li>Join groups or clubs.</li><li> Let others know you're willing to talk or hang out.</li><li> Talk to a counselor.</li><li> Be kind to yourself.</li></ul>";
+      break;
+    case 'point2':
+      message = "Share your feelings with someone you trust—emotional connection begins with honest moments, not perfect words.";
+      extra = "<ul><li>Express your feelings.</li><li> Avoid one-sided relationships.</li><li> Know what kind of connection you’re missing.</li><li> Practice self-love.</li><li> Seek therapy to rebuild emotional bonds.</li></ul>";
+      break;
+    case 'point3':
+      message = "Your worth isn't defined by others' cruelty—seek support, stay true to yourself, and know that kinder connections do exist.";
+      extra = "<ul><li>Acknowledge your feelings.</li><li> Recognize it's not your fault.</li><li> Join activities where you feel valued.</li></ul>";
+      break;
+    case 'point4':
+      message = "Take small breaks, step into the real world—meaningful moments and true connection often begin offline.";
+      extra = "<ul><li>Limit screen time.</li><li> Prioritize real-world experiences.</li><li> Connect face-to-face through clubs or events.</li></ul>";
+      break;
+    case 'point5':
+      message = "Start with kindness to yourself—confidence grows with small steps, and genuine friendship begins with being real, not perfect.";
+      extra = "<ul><li>Say hello, join social activities, and improve body language.</li></ul>";
+      break;
+    case 'point6':
+      message = "Stay in touch with old friends.";
+      extra = "<ul><li>Actively build new connections.</li><li> Create routines.</li><li> Explore your new environment.</li><li> Seek professional support if needed.</li></ul>";
+      break;
+    default:
+      message = "";
+      extra = "";
+  }
+
+  output.innerHTML = `<strong>${message}</strong>`;
+  options.innerHTML = extra;
+}
+
+    </script>
+
+<footer>
+  <p>© 2025 HealSphere. Your life matters. 💙</p>
+</footer>
+</body>
+</html>

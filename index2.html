@@ -1,0 +1,101 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase - Mental Health Support</title>
+  <link rel="stylesheet" href="style2.css">
+  
+</head>
+<body>
+	
+<header>
+  <h1>HealSphere - Your Private Mental Health Companion</h1>
+</header>
+    
+<nav>
+  <a href="index.html" target="blank">Home</a>
+  <a href="index0.html" onclick="showPage('mood')">Mood Check-In</a>
+  <a href="stories.html" onclick="showPage('story')">Success Stories</a>
+  <a href="#contact" onclick="showPage('counseling')">Contact Us</a>
+</nav>
+
+<main>
+
+  <!-- Sad -->
+  <section id="sad" class="active">
+    <h2>Check for sad 😞</h2>
+    <p>Select why you're feeling sad:</p>
+    <select id="sadSelect" onchange="showMoodResponse()">
+      <option value="">-- Select Your Reason of sadness --</option>
+      <option value="point1"> Relationship Issues</option>
+      <option value="point2"> Due to academic pressure</option>
+      <option value="point3"> Due to bad result</option>
+      <option value="point4"> Financial issues</option>
+      <option value="point5"> Fear of failure</option>
+      <option value="point6"> Due to home sickness</option>
+      <option value="point7"> Due to some childhood trauma</option>
+      <option value="point8"> Due to bullied by classmates</option>
+      
+    </select>
+    <div id="sadOutput" class="sad-result"></div>
+    <div id="sadOptions" class="sad-options"></div>
+  </section>
+
+ 
+
+</main>
+    <script> 
+       function showMoodResponse() {
+  const mood = document.getElementById('sadSelect').value;
+  const output = document.getElementById('sadOutput');
+  const options = document.getElementById('sadOptions');
+  let message = '', extra = '';
+
+  switch (mood) {
+    case 'point1':
+      message = "It's okay to feel hurt. You deserve love and respect.";
+      extra = "<ul><li>Talk to someone you trust about it.</li><li>Consider journaling your feelings.</li></ul>";
+      break;
+    case 'point2':
+      message = "You're doing your best, and that is enough.";
+      extra = "<ul><li>Break your tasks into small goals.</li><li>Don’t hesitate to seek academic support.</li></ul>";
+      break;
+    case 'point3':
+      message = "A result doesn't define your worth.";
+      extra = "<ul><li>Reflect and plan your next steps.</li><li>Take breaks to reset mentally.</li></ul>";
+      break;
+    case 'point4':
+      message = "Financial stress is real, but you can get through it.";
+      extra = "<ul><li>Seek advice from a counselor or financial planner.</li><li>Look into available student support programs.</li></ul>";
+      break;
+    case 'point5':
+      message = "Failure is not the opposite of success, it's part of it.";
+      extra = "<ul><li>Visualize success but accept the learning curve.</li><li>Take one step at a time.</li></ul>";
+      break;
+    case 'point6':
+      message = "Missing home is natural, you're adapting to a new environment.";
+      extra = "<ul><li>Stay in touch with family.</li><li>Build new routines to feel more at ease.</li></ul>";
+      break;
+    case 'point7':
+      message = "You're strong for making it this far. Healing takes time.";
+      extra = "<ul><li>Consider therapy if you haven't already.</li><li>Practice self-compassion daily.</li></ul>";
+      break;
+    case 'point8':
+      message = "Bullying says more about them than it does about you.";
+      extra = "<ul><li>Talk to a teacher or counselor.</li><li>Stay close to supportive people.</li></ul>";
+      break;
+    default:
+      message = "";
+      extra = "";
+  }
+
+  output.innerHTML = `<strong>${message}</strong>`;
+  options.innerHTML = extra;
+}
+
+    </script>
+
+<footer>
+  <p>© 2025 HealSphere. Your life matters. 💙</p>
+</footer>
+</body>
+</html>

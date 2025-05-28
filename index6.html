@@ -1,0 +1,93 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase - Mental Health Support</title>
+  <link rel="stylesheet" href="style6.css">
+  
+</head>
+<body>
+	
+<header>
+  <h1>HealSphere - Your Private Mental Health Companion</h1>
+</header>
+    
+<nav>
+  <a href="#" target="blank">Home</a>
+  <a href="#" onclick="showPage('mood')">Mood Check-In</a>
+  <a href="#" onclick="showPage('story')">Stories</a>
+  <a href="#" onclick="showPage('counseling')">Counseling</a>
+</nav>
+
+<main>
+
+  <!-- neutral -->
+  <section id="neutral" class="active">
+    <h2>Check for neutral 😡</h2>
+    <p>Select why you're feeling neutral:</p>
+    <select id="neutralSelect" onchange="showMoodResponse()">
+      <option value="">-- Select Your Reason of being neutral --</option>
+      <option value="point1">Nothing exciting or upsetting is happening</option>
+      <option value="point2">😐 Due to broken trust by partner</option>
+      <option value="point3">😞 Due to not being able to achieve goals</option>
+      <option value="point4">😡 Due to always cheated by classmate/partner</option>
+      <option value="point5">😰 Due to not being able to create/join a group of friends</option>
+      
+    </select>
+    <div id="angerOutput" class="anger-result"></div>
+    <div id="angerOptions" class="anger-options"></div>
+  </section>
+
+ 
+
+</main>
+    <script> 
+         function showPage(pageId) {
+    document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+
+
+
+  function showMoodResponse() {
+    const mood = document.getElementById('angerSelect').value;
+    const output = document.getElementById('angerOutput');
+    const options = document.getElementById('angerOptions');
+    let message = '', extra = '';
+
+    switch (anger) {
+      case 'Disrespect or insult in class':
+        message = "Take deep breaths, You're in control.";
+        extra = "<ul><li>Stay calm, don't react immediately. Speak to the person calmly after class. Tell a teacher or authority if it crosses the line.</li></ul>";
+        break;
+      case 'Due to broken trust by partner':
+        message = "Don't feel disheartened, there are many who are waiting for you";
+        extra = "<ul><li>Cool down before making decisions. Express your hurt calmly. Ask for genuinity calmly</li></ul>";
+        break;
+      case 'Due to not being able to achieve goals':
+        message = "Sending you comfort. Don't lose hope.";
+        extra = "<ul><li>Identify your weakness and strength. Break big goals into smaller steps. Goals may need time or a new path. Celebrate small wins to stay motivated. Consistency beats the frustration.</li></ul>";
+        break;
+      case 'Due to always cheated by classmate/partner':
+        message = "Forget about those who don't really care your feelings";
+        extra = "<ul><li>Don't allow repeated chances without change. Express how their actions hurt you. Limit trust with those who misuse it. Walk away from toxic people.</li></ul>";
+        break;
+      case 'Due to not being able to create/join a group of friends.':
+        message = "You're not alone in this ";
+        extra = "<ul><li>Build friendship one-by-one firstly. Friendship grow with trust and patience so be open and kind. Don't force it, let connections develop naturally. Listening and showing interest helps.</li></ul>";
+        break;
+
+      default:
+        message = "";
+        extra = "";
+    }
+
+    output.innerHTML = `<strong>${message}</strong>`;
+    options.innerHTML = extra;
+  }
+    </script>
+
+<footer>
+  <p>© 2025 HealSphere. Your life matters. 💙</p>
+</footer>
+</body>
+</html>

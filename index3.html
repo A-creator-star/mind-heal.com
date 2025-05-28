@@ -1,0 +1,103 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase - Mental Health Support</title>
+  <link rel="stylesheet" href="style3.css">
+  
+</head>
+<body>
+	
+<header>
+  <h1>HealSphere - Your Private Mental Health Companion</h1>
+</header>
+    
+<nav>
+  <a href="index.html" target="blank">Home</a>
+  <a href="index0.html" onclick="showPage('mood')">Mood Check-In</a>
+  <a href="stories.html" onclick="showPage('story')">Success Stories</a>
+  <a href="#contact" onclick="showPage('counseling')">Contact Us</a>
+</nav>
+
+<main>
+
+  <!-- Anxious -->
+  <section id="anxious" class="active">
+    <h2>Check for Anxious 😰</h2>
+    <p>Select why you're feeling anxious:</p>
+    <select id="anxiousSelect" onchange="showMoodResponse()">
+      <option value="">-- Select Your Reason of anxiety --</option>
+      <option value="point1">Fear of being judged</option>
+      <option value="point2">Lack of self confidence</option>
+      <option value="point3">Meeting new people or attending events</option>
+      <option value="point4">Due to not able to speak in public</option>
+      <option value="point6">Overthinking problem</option>
+      <option value="point7">Deadliness of assignment or projects</option>
+      <option value="point8">High expectation from yourself and by your parents</option>
+       
+    </select>
+    <div id="anxiousOutput" class="anxious-result"></div>
+    <div id="anxiousOptions" class="anxious-options"></div>
+  </section>
+
+ 
+
+</main>
+    <script> 
+    function showMoodResponse() {
+  const mood = document.getElementById('anxiousSelect').value;
+  const output = document.getElementById('anxiousOutput');
+  const options = document.getElementById('anxiousOptions');
+  let message = '', extra = '';
+
+  switch (mood) {
+    case 'point1':
+      message = "Don't care what others think about you.";
+      extra = "<ul><li>Focus on yourself.</li><li>Accept imperfection because no one is perfect and that's okay.</li><li> Be around supportive people who uplift you.</li><li> Small wins build trust in yourself.</li></ul>";
+      break;
+
+    case 'point2':
+      message = "Believe in yourself—you have more strength and potential than you think.";
+      extra = "<ul><li>Do little tasks to build success and belief.</li><li> Progress boosts confidence.</li><li> Step out of your comfort zone bit by bit.</li><li> Focus on your strengths.</li><li> Body language shapes mindset.</li></ul>";
+      break;
+
+    case 'point3':
+      message = "Take deep breaths, start with small steps, and remember—most people are friendlier than we imagine.";
+      extra = "<ul><li>Prepare in advance.</li><li> Begin with smaller gatherings and gradually work up to larger events.</li></ul>";
+      break;
+
+    case 'point4':
+      message = "Start small, practice often, and remember—confidence grows each time you try, not when you wait to feel ready.";
+      extra = "<ul><li>Begin speaking in small, informal groups before progressing to larger audiences.</li><li> Imagine yourself speaking confidently and the audience reacting positively.</li><li> Know your topic well and structure your speech clearly.</li></ul>";
+      break;
+
+    case 'point6':
+      message = "Pause, breathe, write your thoughts down—overthinking fades when you focus on the present and take one step at a time.";
+      extra = "<ul><li>Identify thought patterns.</li><li> Challenge your thoughts (Ask: Is this thought realistic?).</li><li> Use techniques like meditation, deep breathing, or body scans to redirect focus.</li><li> Engage in activities like reading, exercising, drawing, etc.</li></ul>";
+      break;
+
+    case 'point7':
+      message = "Break tasks into smaller steps, prioritize, and start with one thing—progress, not perfection, beats panic.";
+      extra = "<ul><li>Divide projects into manageable parts with mini-deadlines.</li><li> Use a planner to organize tasks.</li><li> Apply time management techniques.</li><li> Eliminate distractions like Instagram and Facebook.</li></ul>";
+      break;
+
+    case 'point8':
+      message = "Do your best, not the impossible—your worth isn’t measured by expectations, but by your effort and well-being.";
+      extra = "<ul><li>Break big goals into realistic, short-term steps.</li><li> Focus on effort and growth.</li><li> Talk openly with your parents about how their expectations affect you.</li><li> Acknowledge small wins and efforts instead of only major achievements.</li></ul>";
+      break;
+
+    default:
+      message = "";
+      extra = "";
+  }
+
+  output.innerHTML = `<strong>${message}</strong>`;
+  options.innerHTML = extra;
+}
+
+    </script>
+
+<footer>
+  <p>© 2025 HealSphere. Your life matters. 💙</p>
+</footer>
+</body>
+</html>
